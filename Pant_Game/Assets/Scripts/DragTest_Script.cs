@@ -1,0 +1,86 @@
+using UnityEngine;
+
+public class MouseDragHinge : MonoBehaviour
+{
+    //This script is used to pick up 2d rigid bodies and spin them/throw them
+    public Rigidbody2D rb;
+
+    GameObject HingePoint;
+    SpringJoint2D hinge;
+
+    Vector2 velocity;
+    Vector2 lastPosition;
+    Vector2 objPosition;
+
+    bool move = false;
+
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        hinge = GetComponent<SpringJoint2D>();
+
+        //Finds a GameObject with the name "HingePoint"
+        HingePoint = this.gameObject;
+    }
+
+    private void OnMouseDown()
+    {
+        //Saves the mouse position to screen coordinates
+        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        HingePoint.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(mousePosition).x, Camera.main.ScreenToWorldPoint(mousePosition).y, HingePoint.transform.position.z);
+
+        //Saves the HingeJoint2D component to variable that we can use
+        
+        //A Boolean that indicates we can start calculating movement
+        move = true;
+        //Reenables the hinge which is likely disabled after OnMouseUp is used
+        hinge.enabled = true;
+        //Assigns whatever rigid body we have clicked on to our hinge
+        hinge.connectedBody = rb;
+        //Prevents the hinge from adjusting the anchorpoint during fixed update, this well be set to true in OnMouseUp
+        hinge.autoConfigureConnectedAnchor = false;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0;
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (move == true)
+        {
+            //Saves the mouse position to screen coordinates
+            Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            Vector2 localPos = Camera.main.ScreenToWorldPoint(mousePosition);
+            HingePoint.transform.position = new Vector2(Camera.main.ScreenToWorldPoint(mousePosition).x, Camera.main.ScreenToWorldPoint(mousePosition).y);
+            
+            hinge.anchor = localPos;
+            //-----Continuously calculates the velocity to apply to the object after it has been thrown-----
+            //Takes the current object postition to use for the velocity calculation
+            objPosition = transform.position;
+            //Calculates velocity
+            velocity = (objPosition - lastPosition) / (Time.fixedDeltaTime);
+            //Saves the current position for use in the next velocity calculation
+            lastPosition = transform.position;
+
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        //Removes the hinges influence from the rigidbody
+        hinge.connectedBody = null;
+        //Allows the Anchor point to be moved for when we click on a new rigid body
+        hinge.autoConfigureConnectedAnchor = true;
+        //Disables the rigid body
+        hinge.enabled = false;
+        //Stops the calculations in FixedUpdate
+        move = false;
+        //Combines the velocity from the mouse with the velocity from the hinge and applies it to the desired rigid body
+        rb.linearVelocity = rb.linearVelocity + velocity;
+
+        rb.gravityScale = 1;
+    }
+}
