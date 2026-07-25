@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Collect_Script : MonoBehaviour
 {
-    public CollectTxt_Script collectTxtScript;
+    [SerializeField] private CollectTxt_Script collectTxtScript;
     public void OnMouseClick()
     {
         collectTxtScript.UpdateCollectText();
