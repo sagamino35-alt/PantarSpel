@@ -19,6 +19,7 @@ public class Movement_Script : MonoBehaviour
     
     void Start()
     {
+        pMoveSpeed = 3;
         WallsBG1.SetActive(true);
         WallsBG2.SetActive(false);
         WallsBG3.SetActive(false);
