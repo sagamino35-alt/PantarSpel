@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner_Script
   BottlePrefab: {fileID: 1261572431504152213, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
   spawnPoint: {fileID: 1719373437}
+  clickCount: 0
 --- !u!212 &352670556
 SpriteRenderer:
   serializedVersion: 2
@@ -1341,7 +1342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Burkar pantade: 0'
+  m_text: 'Burkar kvar att panta: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1656,75 +1657,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2095772392
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1261572431504152213, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_Name
-      value: Pant flaska
-      objectReference: {fileID: 0}
-    - target: {fileID: 4166692937214760117, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -5.879379
-      objectReference: {fileID: 0}
-    - target: {fileID: 4166692937214760117, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 1.7116771
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654572456036070078, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: PointsText
-      value: 
-      objectReference: {fileID: 1930522245}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.879379
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.7116771
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211087460683583688, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
 --- !u!1 &2145012610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1786,5 @@ SceneRoots:
   - {fileID: 1273631729}
   - {fileID: 352670557}
   - {fileID: 1468247214}
-  - {fileID: 2095772392}
   - {fileID: 2145012614}
   - {fileID: 1984139233}

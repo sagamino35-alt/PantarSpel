@@ -39,7 +39,7 @@ public class Collision_Script : MonoBehaviour
         if (collision.gameObject.CompareTag("Insert") && dragScript.moving)
         {
             Debug.Log("Starting count down");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             Debug.Log("Count down stopped");
             StartCoroutine(CheckIfMoving(collision, score_Script));
         }
@@ -53,7 +53,7 @@ public class Collision_Script : MonoBehaviour
         {
            Debug.Log("Bottle should be destroyed");
            Destroy(transform.parent.gameObject);
-           score_Script.AddScore();
+           score_Script.SubScore();
            
         }
         else if (!collision.gameObject.CompareTag("Insert") || dragScript.moving)
