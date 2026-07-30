@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "PointerAction",
+    "maps": [
+        {
+            "name": "PointerClick",
+            "id": "558cd46e-d8a8-429c-b5a8-fb8c0c4e32f8",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "61a87307-66a0-4859-8527-0f0b81b43c47",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9edf6817-8bb0-48ea-aa6c-b6b90a41a787",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
