@@ -7,57 +7,73 @@ public class Collision_Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     Drag_Script dragScript;
-    Money_Script money_Script;
-    Score_Script score_Script;
+
 
 
     void Start()
     {
         dragScript = GetComponent<Drag_Script>();
-        
+
     }
 
- 
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Insert") && dragScript.moving)
-        {
-            if (collision.gameObject.CompareTag("Insert") && !dragScript.moving)
-            {
-                Debug.Log("Bottle should be destroyed");
-                Destroy(transform.parent.gameObject);
-                score_Script.SubScore();
-                money_Script.AddMoney();
-
-            }
-            else if (!collision.gameObject.CompareTag("Insert") || dragScript.moving)
-            {
-                Debug.Log("Bottle is still moving or is not colliding, not destroyed");
-            }
-            else if (collision.gameObject.CompareTag("Insert") || !dragScript.moving)
-            {
-                Debug.Log("Bottle is still moving or is not colliding, not destroyed");
-            }
-        }
+        StartCoroutine(CheckCollision(collision, FindAnyObjectByType<Score_Script>()));
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+
     }
 
 
     void FixedUpdate()
     {
-        
+
     }
 
-    
-    //check if object is moving
-    //if so, do not destroy object on collision with insert
-    //if not, destroy object on collision with insert
-    //Use update to constantly check if object is moving or not
+    IEnumerator CheckCollision(Collider2D collision, Score_Script score_Script)
+    {
+        if (collision.gameObject.CompareTag("Insert") && dragScript.moving)
+        {
+            Debug.Log("Starting count down");
+            yield return new WaitForSeconds(1f);
+            Debug.Log("Count down stopped");
+            StartCoroutine(CheckIfMoving(collision, score_Script));
+        }
 
+
+    }
+
+    IEnumerator CheckIfMoving(Collider2D collision, Score_Script score_Script)
+    {
+        if (collision.gameObject.CompareTag("Insert") && !dragScript.moving)
+        {
+            Debug.Log("Bottle should be destroyed");
+            Destroy(transform.parent.gameObject);
+            score_Script.SubScore();
+
+        }
+        else if (!collision.gameObject.CompareTag("Insert") || dragScript.moving)
+        {
+            Debug.Log("Bottle is still moving or is not colliding, not destroyed");
+        }
+        else if (collision.gameObject.CompareTag("Insert") || !dragScript.moving)
+        {
+            Debug.Log("Bottle is still moving or is not colliding, not destroyed");
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+
+        //check if object is moving
+        //if so, do not destroy object on collision with insert
+        //if not, destroy object on collision with insert
+        //Use update to constantly check if object is moving or not
+
+
+    }
 
 }
