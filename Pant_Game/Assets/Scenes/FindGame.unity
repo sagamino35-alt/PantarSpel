@@ -976,7 +976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f4502fff9781bb245bdba551711c37e0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2886,7 +2886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4323939555173997259, guid: c020181be1fd011458c8a0c3ba51030a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7b902d472156c34b87bb7570e7737b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3351,6 +3351,13 @@ MonoBehaviour:
   cursorImage: {fileID: 278723588}
   pointer1_hover: {fileID: 21300000, guid: f4502fff9781bb245bdba551711c37e0, type: 3}
   pointer1_click: {fileID: 21300000, guid: 725e126e9774e0c419357a7428d96bec, type: 3}
+  pointer2_hover: {fileID: 21300000, guid: b47905ef0375000499490f6d6d315858, type: 3}
+  pointer2_click: {fileID: 21300000, guid: 2962c72089796644ea6e8aae98023ce1, type: 3}
+  pointer3_hover: {fileID: 21300000, guid: f4fb49776e0dbc040a4d34d6422eb636, type: 3}
+  pointer3_click: {fileID: 21300000, guid: 0c5f570c19037f34182aa4a295b85bb5, type: 3}
+  p1: 0
+  p2: 1
+  p3: 0
 --- !u!1 &1651727828
 GameObject:
   m_ObjectHideFlags: 0
