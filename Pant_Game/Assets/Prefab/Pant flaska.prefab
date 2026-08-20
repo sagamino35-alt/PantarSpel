@@ -209,7 +209,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -4.1684003, y: -2.2500002}
+  m_ConnectedAnchor: {x: -14.24769, y: 5.99668}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5073ab4a5542a4191ee0b0381870d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collision_Script
+  moneyScript: {fileID: 0}
 --- !u!1 &4892484164756746554
 GameObject:
   m_ObjectHideFlags: 0

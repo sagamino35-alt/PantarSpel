@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Drag_Script : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Drag_Script : MonoBehaviour
     
     void Start()
     {
+        Cursor.visible = true;
         rb = GetComponent<Rigidbody2D>();
         HingePoint = this.gameObject;
         hinge = HingePoint.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;

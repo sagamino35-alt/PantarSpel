@@ -5,11 +5,16 @@ TagManager:
   serializedVersion: 3
   tags:
   - Insert
-  - Bottle1
   - BG2
   - BG3
   - BG1
   - NoBG
+  - Bottle1
+  - Bottle_Green
+  - Bottle_Red
+  - Bottle_Orange
+  - Bottle_Blue
+  - Bottle_Yellow
   layers:
   - Default
   - TransparentFX

@@ -7,13 +7,14 @@ public class Collision_Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     Drag_Script dragScript;
+    [SerializeField] Money_Script moneyScript;
 
 
 
     void Start()
     {
         dragScript = GetComponent<Drag_Script>();
-
+        moneyScript = FindAnyObjectByType<Money_Script>();
     }
 
 
@@ -54,6 +55,7 @@ public class Collision_Script : MonoBehaviour
             Debug.Log("Bottle should be destroyed");
             Destroy(transform.parent.gameObject);
             score_Script.SubScore();
+            moneyScript.AddMoney();
 
         }
         else if (!collision.gameObject.CompareTag("Insert") || dragScript.moving)

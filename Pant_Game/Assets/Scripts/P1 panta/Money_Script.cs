@@ -1,12 +1,18 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Money_Script : MonoBehaviour
 {
+    public static void dontDestroyOnLoad(Money_Script moneyScript)
+    {
+        
+    }
     public int moneyAmount;
 
-    private void Start()
+    private void Update()
     {
-        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
+        
+        
     }
 
     public void AddMoney()
