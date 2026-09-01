@@ -923,6 +923,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7886166728109190654, guid: a2c99873e4c06334b9dcc0f959e040ff, type: 3}
   m_PrefabInstance: {fileID: 115913370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &116366537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116366538}
+  m_Layer: 0
+  m_Name: CanvasManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &116366538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116366537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 906.907, y: 486.71112, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117432376
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 117432377}
+  - component: {fileID: 117432378}
   m_Layer: 0
   m_Name: TrashManager
   m_TagString: Untagged
@@ -954,6 +986,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &117432378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117432376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43d603fe39a82d47a7d8adc1a53e73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashManager_Script
+  CollectText: {fileID: 1451486719}
+  collectedCount: 0
+  redBottleCount: 0
+  greenBottleCount: 0
+  blueBottleCount: 0
+  orangeBottleCount: 0
+  yellowBottleCount: 0
 --- !u!1 &132950916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1274,7 @@ PrefabInstance:
     - target: {fileID: 4044781963414924027, guid: 34d2fc025f93d194da9584581f0f66a4, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1364,7 +1415,7 @@ PrefabInstance:
     - target: {fileID: 3670906087100690061, guid: 183c24c5ec9a1b14ebe91799c81e0a6d, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2655,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 5177988177305978089, guid: a2c99873e4c06334b9dcc0f959e040ff, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     - target: {fileID: 7886166728109190654, guid: a2c99873e4c06334b9dcc0f959e040ff, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3138,7 +3189,7 @@ PrefabInstance:
     - target: {fileID: 3507762147504180903, guid: 973999e6121afcb429c0388abc759763, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4246,14 +4297,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803658895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439451993}
   - {fileID: 420151566}
-  m_Father: {fileID: 1192442840}
+  m_Father: {fileID: 2062051423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4275,7 +4326,7 @@ PrefabInstance:
     - target: {fileID: 6406760487035745126, guid: a2a8c0e8d97bdc6458582620ba9829df, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     - target: {fileID: 7056498389972227057, guid: a2a8c0e8d97bdc6458582620ba9829df, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4818,6 +4869,38 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3517390702673533352, guid: 9d72ddcc7c5b9a449934555adf756882, type: 3}
   m_PrefabInstance: {fileID: 1002220956}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1005595020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005595021}
+  m_Layer: 0
+  m_Name: Shop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1005595021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005595020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 906.907, y: 486.71112, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2062051423}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1050948587
 GameObject:
   m_ObjectHideFlags: 0
@@ -4899,7 +4982,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1050948591
 RectTransform:
@@ -5147,12 +5230,12 @@ GameObject:
   - component: {fileID: 1192442842}
   - component: {fileID: 1192442841}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Recycle canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1192442840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5166,7 +5249,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 218438521}
-  - {fileID: 803658896}
   - {fileID: 1086234362}
   m_Father: {fileID: 1771326280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5265,33 +5347,13 @@ GameObject:
   - component: {fileID: 1220783063}
   - component: {fileID: 1220783062}
   - component: {fileID: 1220783061}
-  - component: {fileID: 1220783059}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Find canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1220783059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220783058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e22e1cfee6fa07499f8d9d4b8d190d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollectTxt_Script
-  CollectText: {fileID: 1451486719}
-  collectedCount: 0
-  redBottleCount: 0
-  greenBottleCount: 0
-  blueBottleCount: 0
-  orangeBottleCount: 0
-  yellowBottleCount: 0
 --- !u!224 &1220783060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6788,37 +6850,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1554907845
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1554907846}
-  m_Layer: 0
-  m_Name: StartManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1554907846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554907845}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 958.5251, y: 538.55145, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1573140391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6914,7 +6945,7 @@ PrefabInstance:
     - target: {fileID: 7184484389053515626, guid: de544dc1cad9fdb49844fdea76874095, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7425,7 +7456,7 @@ PrefabInstance:
     - target: {fileID: 4050898348195056945, guid: 0fcac0bab14418342950d1b22a3562ea, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7584,7 +7615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771326280}
   m_Layer: 0
-  m_Name: Shop
+  m_Name: Recycle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8669,7 +8700,7 @@ PrefabInstance:
     - target: {fileID: 3764629701422959749, guid: 1f453f1680c0f8847bb1f30d980ff42a, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     - target: {fileID: 9116986280983404023, guid: 1f453f1680c0f8847bb1f30d980ff42a, type: 3}
       propertyPath: m_Name
       value: Bottle1_green
@@ -9130,6 +9161,109 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7886166728109190654, guid: a2c99873e4c06334b9dcc0f959e040ff, type: 3}
   m_PrefabInstance: {fileID: 2044067929}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2062051422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062051423}
+  - component: {fileID: 2062051426}
+  - component: {fileID: 2062051425}
+  - component: {fileID: 2062051424}
+  m_Layer: 0
+  m_Name: Shop canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2062051423
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062051422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 803658896}
+  m_Father: {fileID: 1005595021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &2062051424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062051422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &2062051425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062051422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &2062051426
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062051422}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &2129080941
 GameObject:
   m_ObjectHideFlags: 0
@@ -9358,7 +9492,7 @@ PrefabInstance:
     - target: {fileID: 1000694680543296159, guid: 49a5b8e8851c24340935c615a6b4ba20, type: 3}
       propertyPath: collectTxtScript
       value: 
-      objectReference: {fileID: 1220783059}
+      objectReference: {fileID: 0}
     - target: {fileID: 8326282442558422405, guid: 49a5b8e8851c24340935c615a6b4ba20, type: 3}
       propertyPath: m_Name
       value: Bottle4_orange
@@ -9380,7 +9514,8 @@ SceneRoots:
   - {fileID: 1517450732}
   - {fileID: 1371429165}
   - {fileID: 1771326280}
-  - {fileID: 1554907846}
+  - {fileID: 1005595021}
   - {fileID: 556470114}
   - {fileID: 1050948591}
   - {fileID: 117432377}
+  - {fileID: 116366538}
