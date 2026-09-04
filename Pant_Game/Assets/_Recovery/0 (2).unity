@@ -3373,7 +3373,6 @@ MonoBehaviour:
   BottlePrefab: {fileID: 1261572431504152213, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
   spawnPoint: {fileID: 1294226915}
   clickCount: 0
-  trashManager: {fileID: 117432378}
 --- !u!212 &638540523
 SpriteRenderer:
   serializedVersion: 2
@@ -5238,7 +5237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Score_Script
   pant: 0
   PointsText: {fileID: 218438522}
-  TrashManager: {fileID: 117432378}
 --- !u!114 &1192442842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9481,8 +9479,8 @@ SceneRoots:
   - {fileID: 1371429165}
   - {fileID: 1771326280}
   - {fileID: 1005595021}
-  - {fileID: 1050948591}
   - {fileID: 556470114}
+  - {fileID: 1050948591}
   - {fileID: 117432377}
   - {fileID: 116366538}
   - {fileID: 1813788817}

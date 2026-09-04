@@ -6,12 +6,13 @@ public class Score_Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] int pant;
     [SerializeField] TextMeshProUGUI PointsText;
+    [SerializeField] TrashManager_Script TrashManager;
 
     
     void Start()
     {
         
-        pant = PlayerPrefs.GetInt("PantAmount");
+        pant = TrashManager.collectedCount;
     }
     void Update()
     {

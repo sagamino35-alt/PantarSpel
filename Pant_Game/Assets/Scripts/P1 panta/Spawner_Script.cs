@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner_Script : MonoBehaviour
@@ -7,6 +8,7 @@ public class Spawner_Script : MonoBehaviour
     public GameObject BottlePrefab;
     [SerializeField] private GameObject spawnPoint;
     public int clickCount = 0;
+    [SerializeField] TrashManager_Script trashManager;
 
     void Start()
     {
@@ -15,7 +17,7 @@ public class Spawner_Script : MonoBehaviour
     private void OnMouseDown()
     {
         clickCount++;
-        if (clickCount == PlayerPrefs.GetInt("PantAmount") || clickCount < PlayerPrefs.GetInt("PantAmount"))
+        if (clickCount == trashManager.collectedCount || clickCount < trashManager.collectedCount)
         {
             Debug.Log("Spawner clicked");
             Instantiate<GameObject>(BottlePrefab, spawnPoint.transform.position, Quaternion.identity);
