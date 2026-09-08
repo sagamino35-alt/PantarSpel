@@ -56,21 +56,21 @@ public class PointerManager_Script : MonoBehaviour
     {
         if (p1 == true && p2 == false && p3 == false)
         {
-            Debug.Log("Clicked with p1");
+            
             cursorImage.sprite = pointer1_click;
         }
 
 
         if (p1 == false && p2 == true && p3 == false)
         {
-            Debug.Log("Clicked with p2");
+            
             cursorImage.sprite = pointer2_click;
         }
 
         if (p1 == false && p2 == false && p3 == true)
         {
-            Debug.Log("Clicked with p3");
-            cursorImage.sprite= pointer3_click;
+            
+            cursorImage.sprite = pointer3_click;
         }
 
         if (p1 == true && p2 == true && p3 == true || 
@@ -80,7 +80,7 @@ public class PointerManager_Script : MonoBehaviour
                             p1 == true && p2 == true && p3 == false 
                                 || p1 == false && p2 == false && p3 == false)
         {
-            Debug.Log("Clicked with p1");
+            
             cursorImage.sprite = pointer1_click;
         }
         
@@ -89,20 +89,20 @@ public class PointerManager_Script : MonoBehaviour
     {
         if (p1 == true && p2 == false && p3 == false)
         {
-            Debug.Log("Clicked with p1");
+            
             cursorImage.sprite = pointer1_hover;
         }
 
 
         if (p1 == false && p2 == true && p3 == false)
         {
-            Debug.Log("Clicked with p2");
+            
             cursorImage.sprite = pointer2_hover;
         }
 
         if (p1 == false && p2 == false && p3 == true)
         {
-            Debug.Log("Clicked with p3");
+            
             cursorImage.sprite = pointer3_hover;
         }
 
@@ -113,7 +113,7 @@ public class PointerManager_Script : MonoBehaviour
                             p1 == true && p2 == true && p3 == false
                                 || p1 == false && p2 == false && p3 == false)
         {
-            Debug.Log("Clicked with p1");
+            
             cursorImage.sprite = pointer1_hover;
         }
     }
