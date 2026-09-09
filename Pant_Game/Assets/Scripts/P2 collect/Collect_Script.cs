@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class Collect_Script : MonoBehaviour
 {
-    [SerializeField] private TrashManager_Script trashManager;
+    [SerializeField] TrashManager_Script trashManager;
     [SerializeField] EnergyManager_Script energyManager;
+    [SerializeField] InventoryManager_Script inventoryManager;
 
     private void Start()
     {
         trashManager = FindAnyObjectByType<TrashManager_Script>();
         energyManager = FindAnyObjectByType<EnergyManager_Script>();
+        inventoryManager = FindAnyObjectByType<InventoryManager_Script>();
+
     }
     public void OnMouseClick()
     {
@@ -21,33 +24,42 @@ public class Collect_Script : MonoBehaviour
         }
         else
         {
-            energyManager.RemoveEnergyPoints();
+            if (inventoryManager.totalInventorySlots == inventoryManager.trashInInventory)
+            {
 
-            trashManager.UpdateCollectText();
-            Debug.Log("Collect button clicked");
+            }
+            else
+            {
+                inventoryManager.AddTrashToInv();
+                energyManager.RemoveEnergyPoints();
 
-            if (gameObject.CompareTag("Bottle_Red"))
-            {
-                trashManager.redBottleCount++;
-            }
-            else if (gameObject.CompareTag("Bottle_Green"))
-            {
-                trashManager.greenBottleCount++;
-            }
-            else if (gameObject.CompareTag("Bottle_Blue"))
-            {
-                trashManager.blueBottleCount++;
-            }
-            else if (gameObject.CompareTag("Bottle_Orange"))
-            {
-                trashManager.orangeBottleCount++;
-            }
-            else if (gameObject.CompareTag("Bottle_Yellow"))
-            {
-                trashManager.yellowBottleCount++;
-            }
+                trashManager.UpdateCollectText();
+                Debug.Log("Collect button clicked");
 
-            gameObject.SetActive(false);
+                if (gameObject.CompareTag("Bottle_Red"))
+                {
+                    trashManager.redBottleCount++;
+                }
+                else if (gameObject.CompareTag("Bottle_Green"))
+                {
+                    trashManager.greenBottleCount++;
+                }
+                else if (gameObject.CompareTag("Bottle_Blue"))
+                {
+                    trashManager.blueBottleCount++;
+                }
+                else if (gameObject.CompareTag("Bottle_Orange"))
+                {
+                    trashManager.orangeBottleCount++;
+                }
+                else if (gameObject.CompareTag("Bottle_Yellow"))
+                {
+                    trashManager.yellowBottleCount++;
+                }
+
+                gameObject.SetActive(false);
+            }
+            
 
         }
         
