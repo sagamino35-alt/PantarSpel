@@ -15,7 +15,7 @@ public class PointerManager_Script : MonoBehaviour
     [SerializeField] Sprite pointer3_hover;
     [SerializeField] Sprite pointer3_click;
 
-    private PointerAction controlls;
+    [SerializeField] PointerAction controlls;
 
     [SerializeField] bool p1;
     [SerializeField] bool p2;

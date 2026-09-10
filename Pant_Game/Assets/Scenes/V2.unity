@@ -4573,6 +4573,7 @@ MonoBehaviour:
   totalInventorySlots: 10
   trashInInventory: 0
   food: 0
+  Shop_Script: {fileID: 1442692743}
 --- !u!4 &903883451
 Transform:
   m_ObjectHideFlags: 0
@@ -6145,7 +6146,10 @@ MonoBehaviour:
   handUpgrade1: 0
   handUpgrade2: 0
   Money_Script: {fileID: 556470113}
-  bagCost: 10
+  Inventory_Script: {fileID: 903883450}
+  bag1Cost: 10
+  hand1Cost: 10
+  foodCost: 10
   bagUpgrade: {fileID: 1222464410}
   handUpgrade: {fileID: 1853142965}
   food: {fileID: 1745222408}
@@ -7360,6 +7364,7 @@ GameObject:
   - component: {fileID: 1745222410}
   - component: {fileID: 1745222409}
   - component: {fileID: 1745222408}
+  - component: {fileID: 1745222411}
   m_Layer: 5
   m_Name: Food
   m_TagString: Untagged
@@ -7469,6 +7474,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745222406}
   m_CullTransparentMesh: 1
+--- !u!114 &1745222411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745222406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daec7a851b5d8bb4dbb92d1057150e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopReciver_Script
+  Shop_Script: {fileID: 0}
+  ShopManager: {fileID: 0}
 --- !u!1001 &1754438183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8155,6 +8174,7 @@ GameObject:
   - component: {fileID: 1853142967}
   - component: {fileID: 1853142966}
   - component: {fileID: 1853142965}
+  - component: {fileID: 1853142968}
   m_Layer: 5
   m_Name: Upgrade hand
   m_TagString: Untagged
@@ -8276,6 +8296,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853142963}
   m_CullTransparentMesh: 1
+--- !u!114 &1853142968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853142963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daec7a851b5d8bb4dbb92d1057150e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopReciver_Script
+  Shop_Script: {fileID: 0}
+  ShopManager: {fileID: 0}
 --- !u!1 &1902328088
 GameObject:
   m_ObjectHideFlags: 0

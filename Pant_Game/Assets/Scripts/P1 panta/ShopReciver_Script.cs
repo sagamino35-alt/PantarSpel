@@ -11,8 +11,20 @@ public class ShopReciver_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void bagUpgradeButton()
+    public void BagUpgradeButton()
     {
-        Shop_Script.bagUpgradeButton();
+        Shop_Script.BagUpgradeButton();
     }
+
+    public void HandUpgradeButton()
+    {
+        Shop_Script.HandUpgradeButton();
+    }
+
+    public void FoodButton()
+    {
+        Shop_Script.FoodButton();
+    }
+
+
 }
