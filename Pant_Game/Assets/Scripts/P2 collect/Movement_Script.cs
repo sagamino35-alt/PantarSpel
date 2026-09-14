@@ -23,7 +23,8 @@ public class Movement_Script : MonoBehaviour
     [SerializeField] private GameObject WallsBG3;
     [SerializeField] private GameObject WallsBG4;
 
-    //[SerializeField] List<GameObject> fireRoom;
+    [SerializeField] private List<GameObject> BgList;
+    [SerializeField] private List<GameObject> BgWallsList;
 
     
     void Start()
@@ -81,27 +82,47 @@ public class Movement_Script : MonoBehaviour
             this.gameObject.transform.position = reset;
         }
 
+
+
+        if (collision.gameObject.CompareTag("BG0"))
+        {
+            Debug.Log("Going back to BG0");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[0].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[0].SetActive(true);
+
+
+        }
+
         if (collision.gameObject.CompareTag("BG1"))
         {
             Debug.Log("Going back to BG1");
 
             this.gameObject.transform.position = reset;
 
-            BG1.SetActive(true);
-            BG2.SetActive(false);
-            BG3.SetActive(false);
-            BG4.SetActive(false);
-
-            WallsBG1.SetActive(true);
-            WallsBG2.SetActive(false);
-            WallsBG3.SetActive(false);
-            WallsBG4.SetActive(false);
-
-            /*foreach (GameObject bkgs in fireRoom)
+            foreach (GameObject BG in BgList)
             {
-                bkgs.SetActive(false);
+                BG.SetActive(false);
             }
-            fireRoom[2].SetActive(true);*/
+            BgList[1].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[1].SetActive(true);
+
 
         }
         if (collision.gameObject.CompareTag("BG2"))
@@ -110,15 +131,19 @@ public class Movement_Script : MonoBehaviour
             
             this.gameObject.transform.position = reset;
 
-            BG1.SetActive(false);
-            BG2.SetActive(true);
-            BG3.SetActive(false);
-            BG4.SetActive(false);
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[2].SetActive(true);
 
-            WallsBG1.SetActive(false);
-            WallsBG2.SetActive(true);
-            WallsBG3.SetActive(false);
-            WallsBG4.SetActive(false);
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[2].SetActive(true);
+
+
         }
         if (collision.gameObject.CompareTag("BG3"))
         {
@@ -126,15 +151,19 @@ public class Movement_Script : MonoBehaviour
             
             this.gameObject.transform.position = reset;
 
-            BG1.SetActive(false);
-            BG2.SetActive(false);
-            BG3.SetActive(true);
-            BG4.SetActive(false);
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[3].SetActive(true);
 
-            WallsBG1.SetActive(false);
-            WallsBG2.SetActive(false);
-            WallsBG3.SetActive(true);
-            WallsBG4.SetActive(false);
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[3].SetActive(true);
+
+
         }
         if (collision.gameObject.CompareTag("BG4"))
         {
@@ -142,15 +171,18 @@ public class Movement_Script : MonoBehaviour
 
             this.gameObject.transform.position = reset;
 
-            BG1.SetActive(false);
-            BG2.SetActive(false);
-            BG3.SetActive(false);
-            BG4.SetActive(true);
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[4].SetActive(true);
 
-            WallsBG1.SetActive(false);
-            WallsBG2.SetActive(false);
-            WallsBG3.SetActive(false);
-            WallsBG4.SetActive(true);
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[4].SetActive(true);
+
 
         }
 
