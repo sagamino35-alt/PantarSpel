@@ -15,6 +15,7 @@ TagManager:
   - Bottle_Orange
   - Bottle_Blue
   - Bottle_Yellow
+  - BG4
   layers:
   - Default
   - TransparentFX

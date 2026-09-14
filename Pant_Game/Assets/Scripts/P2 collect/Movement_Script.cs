@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -7,30 +8,42 @@ public class Movement_Script : MonoBehaviour
     Rigidbody2D pRB;
     [SerializeField] float pMoveSpeed = 3;
     [SerializeField] Vector2 pMoveVector;
+    private Vector2 reset;
+
+
     InputAction moveAction;
-    [SerializeField] private GameObject Canvas1;
-    [SerializeField] private GameObject Canvas2;
-    [SerializeField] private GameObject Canvas3;
+    [SerializeField] private GameObject BG1;
+    [SerializeField] private GameObject BG2;
+    [SerializeField] private GameObject BG3;
+    [SerializeField] private GameObject BG4;
+
 
     [SerializeField] private GameObject WallsBG1;
     [SerializeField] private GameObject WallsBG2;
     [SerializeField] private GameObject WallsBG3;
+    [SerializeField] private GameObject WallsBG4;
+
+    //[SerializeField] List<GameObject> fireRoom;
 
     
     void Start()
     {
+        reset = new Vector2 (0,0);
+
         pMoveSpeed = 3;
         WallsBG1.SetActive(true);
         WallsBG2.SetActive(false);
         WallsBG3.SetActive(false);
+        WallsBG4.SetActive(false);
 
         pRB = GetComponent<Rigidbody2D>();
         moveAction = InputSystem.actions.FindAction("Move");
 
 
-        Canvas1.SetActive(true);
-        Canvas2.SetActive(false);
-        Canvas3.SetActive(false);
+        BG1.SetActive(true);
+        BG2.SetActive(false);
+        BG3.SetActive(false);
+        BG4.SetActive(false);
         
     }
 
@@ -56,7 +69,7 @@ public class Movement_Script : MonoBehaviour
         }
         if (pMoveVector.magnitude == 0)
         {
-            this.gameObject.transform.position = new Vector2(0, 0);
+            this.gameObject.transform.position = reset;
         }
 
     }
@@ -65,51 +78,81 @@ public class Movement_Script : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("NoBG"))
         {
-            this.gameObject.transform.position = new Vector2(0, 0);
+            this.gameObject.transform.position = reset;
         }
 
         if (collision.gameObject.CompareTag("BG1"))
         {
             Debug.Log("Going back to BG1");
-            this.gameObject.transform.position = new Vector2(0, 0);
-            Canvas1.SetActive(true);
-            Canvas2.SetActive(false);
-            Canvas3.SetActive(false);
+
+            this.gameObject.transform.position = reset;
+
+            BG1.SetActive(true);
+            BG2.SetActive(false);
+            BG3.SetActive(false);
+            BG4.SetActive(false);
 
             WallsBG1.SetActive(true);
             WallsBG2.SetActive(false);
             WallsBG3.SetActive(false);
+            WallsBG4.SetActive(false);
+
+            /*foreach (GameObject bkgs in fireRoom)
+            {
+                bkgs.SetActive(false);
+            }
+            fireRoom[2].SetActive(true);*/
 
         }
         if (collision.gameObject.CompareTag("BG2"))
         {
             Debug.Log("Go to BG2");
             
-            //change UI image to BG2 and set BG1 to inactive
-            this.gameObject.transform.position = new Vector2(0,0);
-            Canvas1.SetActive(false);
-            Canvas2.SetActive(true);
-            Canvas3.SetActive(false);
+            this.gameObject.transform.position = reset;
+
+            BG1.SetActive(false);
+            BG2.SetActive(true);
+            BG3.SetActive(false);
+            BG4.SetActive(false);
 
             WallsBG1.SetActive(false);
             WallsBG2.SetActive(true);
             WallsBG3.SetActive(false);
+            WallsBG4.SetActive(false);
         }
         if (collision.gameObject.CompareTag("BG3"))
         {
             Debug.Log("Go to BG3");
             
-            
-            this.gameObject.transform.position = new Vector2(0,0);
-            Canvas1.SetActive(false);
-            Canvas2.SetActive(false);
-            Canvas3.SetActive(true);
+            this.gameObject.transform.position = reset;
+
+            BG1.SetActive(false);
+            BG2.SetActive(false);
+            BG3.SetActive(true);
+            BG4.SetActive(false);
 
             WallsBG1.SetActive(false);
             WallsBG2.SetActive(false);
             WallsBG3.SetActive(true);
+            WallsBG4.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("BG4"))
+        {
+            Debug.Log("Go to BG4");
 
+            this.gameObject.transform.position = reset;
+
+            BG1.SetActive(false);
+            BG2.SetActive(false);
+            BG3.SetActive(false);
+            BG4.SetActive(true);
+
+            WallsBG1.SetActive(false);
+            WallsBG2.SetActive(false);
+            WallsBG3.SetActive(false);
+            WallsBG4.SetActive(true);
+
+        }
 
 
 
