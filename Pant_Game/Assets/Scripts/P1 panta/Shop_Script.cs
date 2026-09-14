@@ -11,6 +11,7 @@ public class Shop_Script : MonoBehaviour
 
     [SerializeField] Money_Script Money_Script;
     [SerializeField] InventoryManager_Script Inventory_Script;
+    [SerializeField] EnergyManager_Script Energy_Script;
 
     [SerializeField] int bag1Cost = 10;
     [SerializeField] int hand1Cost = 10;
@@ -37,7 +38,7 @@ public class Shop_Script : MonoBehaviour
 
             Inventory_Script.BagUpgrade1();
 
-            Money_Script.moneyAmount =- bag1Cost;
+            Money_Script.moneyAmount -= bag1Cost;
         }
         else
         {
@@ -50,6 +51,13 @@ public class Shop_Script : MonoBehaviour
     {
         if (Money_Script.moneyAmount >= hand1Cost)
         {
+            Debug.Log("You clicked the hand upgrade button");
+            handUpgrade1 = true;
+
+            
+            Energy_Script.HandUpgrade1();
+
+            Money_Script.moneyAmount -= hand1Cost;
 
         }
         else

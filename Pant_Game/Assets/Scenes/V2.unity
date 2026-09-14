@@ -852,6 +852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnergyManager_Script
   EnergyPoints: 0
   MaxEnergyPoints: 10
+  CollectCostTrash: 3
+  Shop_Script: {fileID: 1442692743}
 --- !u!4 &98468614
 Transform:
   m_ObjectHideFlags: 0
@@ -5554,7 +5556,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1222464413}
         m_TargetAssemblyTypeName: ShopReciver_Script, Assembly-CSharp
-        m_MethodName: bagUpgradeButton
+        m_MethodName: BagUpgradeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6147,9 +6149,10 @@ MonoBehaviour:
   handUpgrade2: 0
   Money_Script: {fileID: 556470113}
   Inventory_Script: {fileID: 903883450}
-  bag1Cost: 10
-  hand1Cost: 10
-  foodCost: 10
+  Energy_Script: {fileID: 98468613}
+  bag1Cost: 3
+  hand1Cost: 3
+  foodCost: 3
   bagUpgrade: {fileID: 1222464410}
   handUpgrade: {fileID: 1853142965}
   food: {fileID: 1745222408}
@@ -8246,9 +8249,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1853142968}
         m_TargetAssemblyTypeName: ShopReciver_Script, Assembly-CSharp
-        m_MethodName: bagUpgradeButton
+        m_MethodName: HandUpgradeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
