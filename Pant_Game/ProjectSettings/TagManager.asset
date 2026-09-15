@@ -17,6 +17,16 @@ TagManager:
   - Bottle_Yellow
   - BG4
   - BG0
+  - west road BG0
+  - west road BG1
+  - west road BG2
+  - west road BG3
+  - west road BG4
+  - west road BG5
+  - east road BG0
+  - east road BG1
+  - east road BG2
+  - east road BG3
   layers:
   - Default
   - TransparentFX

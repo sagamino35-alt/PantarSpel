@@ -12,16 +12,7 @@ public class Movement_Script : MonoBehaviour
 
 
     InputAction moveAction;
-    [SerializeField] private GameObject BG1;
-    [SerializeField] private GameObject BG2;
-    [SerializeField] private GameObject BG3;
-    [SerializeField] private GameObject BG4;
-
-
-    [SerializeField] private GameObject WallsBG1;
-    [SerializeField] private GameObject WallsBG2;
-    [SerializeField] private GameObject WallsBG3;
-    [SerializeField] private GameObject WallsBG4;
+    
 
     [SerializeField] private List<GameObject> BgList;
     [SerializeField] private List<GameObject> BgWallsList;
@@ -32,20 +23,22 @@ public class Movement_Script : MonoBehaviour
         reset = new Vector2 (0,0);
 
         pMoveSpeed = 3;
-        WallsBG1.SetActive(true);
-        WallsBG2.SetActive(false);
-        WallsBG3.SetActive(false);
-        WallsBG4.SetActive(false);
+       
 
         pRB = GetComponent<Rigidbody2D>();
         moveAction = InputSystem.actions.FindAction("Move");
 
+        foreach (GameObject BG in BgList)
+        {
+            BG.SetActive(false);
+        }
+        BgList[0].SetActive(true);
 
-        BG1.SetActive(true);
-        BG2.SetActive(false);
-        BG3.SetActive(false);
-        BG4.SetActive(false);
-        
+        foreach (GameObject Walls in BgWallsList)
+        {
+            Walls.SetActive(false);
+        }
+        BgWallsList[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -128,7 +121,7 @@ public class Movement_Script : MonoBehaviour
         if (collision.gameObject.CompareTag("BG2"))
         {
             Debug.Log("Go to BG2");
-            
+
             this.gameObject.transform.position = reset;
 
             foreach (GameObject BG in BgList)
@@ -148,7 +141,7 @@ public class Movement_Script : MonoBehaviour
         if (collision.gameObject.CompareTag("BG3"))
         {
             Debug.Log("Go to BG3");
-            
+
             this.gameObject.transform.position = reset;
 
             foreach (GameObject BG in BgList)
@@ -186,11 +179,219 @@ public class Movement_Script : MonoBehaviour
 
         }
 
+        if (collision.gameObject.CompareTag("west road BG0"))
+        {
+            Debug.Log("Go to west road BG0");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[5].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[5].SetActive(true);
+
+
+        }
+
+        if (collision.gameObject.CompareTag("west road BG1"))
+        {
+            Debug.Log("Go to west road BG1");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[6].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[6].SetActive(true);
+
+
+        }
+
+        if (collision.gameObject.CompareTag("west road BG2"))
+        {
+            Debug.Log("Go to west road BG2");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[7].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[7].SetActive(true);
+
+
+        }
+
+
+        if (collision.gameObject.CompareTag("west road BG3"))
+        {
+            Debug.Log("Go to west road BG3");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[8].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[8].SetActive(true);
+
+
+        }
+
+        if (collision.gameObject.CompareTag("west road BG4"))
+        {
+            Debug.Log("Go to west road BG4");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[9].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[9].SetActive(true);
+
+
+        }
+
+        if (collision.gameObject.CompareTag("west road BG5"))
+        {
+            Debug.Log("Go to west road BG5");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[10].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[10].SetActive(true);
+
+
+        }
+
+        if (collision.gameObject.CompareTag("east road BG0"))
+        {
+            Debug.Log("Go to east road BG0");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[11].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[11].SetActive(true);
+
+        }
+
+        if (collision.gameObject.CompareTag("east road BG1"))
+        {
+            Debug.Log("Go to east road BG1");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[12].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[12].SetActive(true);
+
+        }
+
+        if (collision.gameObject.CompareTag("east road BG2"))
+        {
+            Debug.Log("Go to east road BG2");
+
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[13].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[13].SetActive(true);
+
+        }
+
+        if (collision.gameObject.CompareTag("east road BG3"))
+        {
+            Debug.Log("Go to east road BG3");
+            
+            this.gameObject.transform.position = reset;
+
+            foreach (GameObject BG in BgList)
+            {
+                BG.SetActive(false);
+            }
+            BgList[14].SetActive(true);
+
+            foreach (GameObject Walls in BgWallsList)
+            {
+                Walls.SetActive(false);
+            }
+            BgWallsList[14].SetActive(true);
+
+        }
+
+
+
+
+
 
 
     }
-
-
-
 
 }

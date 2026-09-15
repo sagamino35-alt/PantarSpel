@@ -12,6 +12,7 @@ public class CanvasManager_Script : MonoBehaviour
         gameP2Recycle.SetActive(false);
         gameP3Shop.SetActive(false);
         
+        HideCursor();
     }
     public void OpenP1()
     {
@@ -19,6 +20,8 @@ public class CanvasManager_Script : MonoBehaviour
         gameP1Find.SetActive(true);
         gameP2Recycle.SetActive(false);
         gameP3Shop.SetActive(false);
+
+        HideCursor();
     }
 
     public void OpenP2()
@@ -27,6 +30,8 @@ public class CanvasManager_Script : MonoBehaviour
         gameP1Find.SetActive(false);
         gameP2Recycle.SetActive(true);
         gameP3Shop.SetActive(false);
+
+        HideCursor();
     }
 
     public void OpenP3()
@@ -35,6 +40,14 @@ public class CanvasManager_Script : MonoBehaviour
         gameP1Find.SetActive(false);
         gameP2Recycle.SetActive(false);
         gameP3Shop.SetActive(true);
+
+        HideCursor();
+    }
+
+
+    private void HideCursor()
+    {
+        Cursor.visible = false;
     }
 
 }

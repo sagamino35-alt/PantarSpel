@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,14 +18,18 @@ public class PointerManager_Script : MonoBehaviour
 
     [SerializeField] PointerAction controlls;
 
-    [SerializeField] bool p1;
-    [SerializeField] bool p2;
-    [SerializeField] bool p3;
+    public bool p1;
+    public bool p2;
+    public bool p3;
+
+    public List<Sprite> HoverPointerList;
+    public List<Sprite> ClickPointerList;
+
 
     private void Awake()
     {
         controlls = new PointerAction();
-        Cursor.visible = false;
+        
 
     }
 
@@ -43,6 +48,8 @@ public class PointerManager_Script : MonoBehaviour
     {
         controlls.PointerClick.Click.started += _ => startClick();
         controlls.PointerClick.Click.performed += _ => endClick();
+
+
     }
 
 
