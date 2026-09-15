@@ -22,8 +22,10 @@ public class PointerManager_Script : MonoBehaviour
     public bool p2;
     public bool p3;
 
-    public List<Sprite> HoverPointerList;
+    public List<Sprite> H_PointerList;
     public List<Sprite> ClickPointerList;
+
+    public List<bool> boolList;
 
 
     private void Awake()
@@ -33,6 +35,7 @@ public class PointerManager_Script : MonoBehaviour
 
     }
 
+    
     private void OnEnable()
     {
         controlls.Enable();
@@ -46,9 +49,21 @@ public class PointerManager_Script : MonoBehaviour
 
     private void Start()
     {
-        controlls.PointerClick.Click.started += _ => startClick();
-        controlls.PointerClick.Click.performed += _ => endClick();
+        controlls.PointerClick.Click.started += _ => StartClick();
+        controlls.PointerClick.Click.performed += _ => EndClick();
 
+        p1 = true;
+        p2 = false;
+        p3 = false;
+
+
+    }
+
+    public void ChangeToP2()
+    {
+        p1 = false;
+        p2 = true;
+        p3 = false;
 
     }
 
@@ -56,10 +71,15 @@ public class PointerManager_Script : MonoBehaviour
     private void Update()
     {
         cursorGO.transform.position = Input.mousePosition;
+
+
+
+
+
     }
     
 
-    private void startClick()
+    private void StartClick()
     {
         if (p1 == true && p2 == false && p3 == false)
         {
@@ -90,9 +110,11 @@ public class PointerManager_Script : MonoBehaviour
             
             cursorImage.sprite = pointer1_click;
         }
+
+        
         
     }
-    private void endClick()
+    private void EndClick()
     {
         if (p1 == true && p2 == false && p3 == false)
         {
@@ -123,6 +145,14 @@ public class PointerManager_Script : MonoBehaviour
             
             cursorImage.sprite = pointer1_hover;
         }
+
+
+        
+
+
+
+
+
     }
 
     

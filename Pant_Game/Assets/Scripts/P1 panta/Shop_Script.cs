@@ -12,6 +12,8 @@ public class Shop_Script : MonoBehaviour
     [SerializeField] Money_Script Money_Script;
     [SerializeField] InventoryManager_Script Inventory_Script;
     [SerializeField] EnergyManager_Script Energy_Script;
+    [SerializeField] PointerManager_Script Pointer_Script;
+
 
     [SerializeField] int bag1Cost = 10;
     [SerializeField] int hand1Cost = 10;
@@ -58,6 +60,9 @@ public class Shop_Script : MonoBehaviour
             Energy_Script.HandUpgrade1();
 
             Money_Script.moneyAmount -= hand1Cost;
+
+            Pointer_Script.ChangeToP2();
+
 
         }
         else
