@@ -9,6 +9,12 @@ public class Shop_Script : MonoBehaviour
     public bool handUpgrade1;
     public bool handUpgrade2;
 
+    
+
+
+
+
+
     [SerializeField] Money_Script Money_Script;
     [SerializeField] InventoryManager_Script Inventory_Script;
     [SerializeField] EnergyManager_Script Energy_Script;
@@ -75,7 +81,8 @@ public class Shop_Script : MonoBehaviour
     {
         if (Money_Script.moneyAmount >= foodCost)
         {
-
+            Money_Script.moneyAmount -= foodCost;
+            Energy_Script.AddFood();
         }
         else
         {

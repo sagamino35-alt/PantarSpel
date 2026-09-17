@@ -4,7 +4,6 @@ public class InventoryManager_Script : MonoBehaviour
 {
     public int totalInventorySlots;
     public int trashInInventory;
-    public int food;
 
     [SerializeField] Shop_Script Shop_Script;
 
