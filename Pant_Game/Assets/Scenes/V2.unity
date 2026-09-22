@@ -1084,6 +1084,7 @@ MonoBehaviour:
   gameP1Find: {fileID: 1371429164}
   gameP2Recycle: {fileID: 1771326279}
   gameP3Shop: {fileID: 1005595020}
+  scoreScript: {fileID: 1192442841}
 --- !u!1 &117432376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,13 +1129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43d603fe39a82d47a7d8adc1a53e73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashManager_Script
-  CollectText: {fileID: 1451486719}
-  collectedCount: 0
-  redBottleCount: 0
-  greenBottleCount: 0
-  blueBottleCount: 0
-  orangeBottleCount: 0
-  yellowBottleCount: 0
 --- !u!224 &118778476 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3517390702673533352, guid: 9d72ddcc7c5b9a449934555adf756882, type: 3}
@@ -4511,6 +4505,7 @@ GameObject:
   - component: {fileID: 420151569}
   - component: {fileID: 420151568}
   - component: {fileID: 420151571}
+  - component: {fileID: 420151572}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4594,6 +4589,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 420151572}
+        m_TargetAssemblyTypeName: DayManager_Script, Assembly-CSharp
+        m_MethodName: ResetDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &420151569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4646,6 +4653,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasManagerReciver_Script
   CanvasManager: {fileID: 0}
   CanvasManager_Script: {fileID: 0}
+--- !u!114 &420151572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420151565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2725e99c0f3b64682478a1f3eef4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayManager_Script
+  energyManagerScript: {fileID: 0}
 --- !u!1 &423228277
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,7 +7397,7 @@ MonoBehaviour:
   BottlePrefab: {fileID: 1261572431504152213, guid: cb69df2ad8815d148aee9db3eaf481db, type: 3}
   spawnPoint: {fileID: 1294226915}
   clickCount: 0
-  trashManager: {fileID: 117432378}
+  inventoryManager: {fileID: 903883450}
 --- !u!212 &638540523
 SpriteRenderer:
   serializedVersion: 2
@@ -10515,7 +10535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52add566c81e1824bb3036c91cbe4ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collect_Script
-  trashManager: {fileID: 0}
   energyManager: {fileID: 0}
   inventoryManager: {fileID: 0}
   trashHeapScript: {fileID: 0}
@@ -10672,6 +10691,12 @@ MonoBehaviour:
   totalInventorySlots: 10
   trashInInventory: 0
   Shop_Script: {fileID: 1442692743}
+  CollectText: {fileID: 1451486719}
+  redBottleCount: 0
+  greenBottleCount: 0
+  blueBottleCount: 0
+  orangeBottleCount: 0
+  yellowBottleCount: 0
 --- !u!4 &903883451
 Transform:
   m_ObjectHideFlags: 0
@@ -11821,7 +11846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1005595021
 Transform:
   m_ObjectHideFlags: 0
@@ -14233,7 +14258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Score_Script
   pant: 0
   PointsText: {fileID: 218438522}
-  TrashManager: {fileID: 117432378}
+  InventoryManager: {fileID: 903883450}
 --- !u!114 &1192442842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14714,10 +14739,10 @@ RectTransform:
   - {fileID: 264721582}
   m_Father: {fileID: 1370713587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 538.6128, y: -364.8447}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222464410
 MonoBehaviour:
@@ -19185,10 +19210,10 @@ RectTransform:
   - {fileID: 1337314557}
   m_Father: {fileID: 1370713587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 758.6128, y: -364.8447}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1745222408
 MonoBehaviour:
@@ -19985,10 +20010,10 @@ RectTransform:
   - {fileID: 792119346}
   m_Father: {fileID: 1370713587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 648.6128, y: -364.8447}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853142965
 MonoBehaviour:

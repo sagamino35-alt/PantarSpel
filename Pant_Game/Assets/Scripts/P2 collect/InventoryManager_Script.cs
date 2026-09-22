@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class InventoryManager_Script : MonoBehaviour
@@ -29,5 +30,17 @@ public class InventoryManager_Script : MonoBehaviour
         trashInInventory++;
     }
 
+    public TextMeshProUGUI CollectText;
+    public int redBottleCount = 0;
+    public int greenBottleCount = 0;
+    public int blueBottleCount = 0;
+    public int orangeBottleCount = 0;
+    public int yellowBottleCount = 0;
 
+    
+
+    void Update()
+    {
+        CollectText.text = "Burkar samlade: " + trashInInventory.ToString();
+    }
 }

@@ -6,13 +6,13 @@ public class Score_Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] int pant;
     [SerializeField] TextMeshProUGUI PointsText;
-    [SerializeField] TrashManager_Script TrashManager;
+    [SerializeField] InventoryManager_Script InventoryManager;
 
     
     void Start()
     {
         
-        pant = TrashManager.collectedCount;
+        pant = InventoryManager.trashInInventory;
     }
     void Update()
     {
@@ -24,5 +24,11 @@ public class Score_Script : MonoBehaviour
         pant--;
         
     }
+
+    public void UpdateCount()
+    {
+        pant = InventoryManager.trashInInventory;
+        PointsText.text = "Burkar kvar att panta: " + pant.ToString();
+    } 
 
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Collect_Script : MonoBehaviour
 {
-    [SerializeField] TrashManager_Script trashManager;
+   
     [SerializeField] EnergyManager_Script energyManager;
     [SerializeField] InventoryManager_Script inventoryManager;
     [SerializeField] TrashHeap_Script trashHeapScript;
@@ -14,7 +14,7 @@ public class Collect_Script : MonoBehaviour
 
     private void Start()
     {
-        trashManager = FindAnyObjectByType<TrashManager_Script>();
+        
         energyManager = FindAnyObjectByType<EnergyManager_Script>();
         inventoryManager = FindAnyObjectByType<InventoryManager_Script>();
         trashHeapScript = FindAnyObjectByType<TrashHeap_Script>();
@@ -44,7 +44,7 @@ public class Collect_Script : MonoBehaviour
                 inventoryManager.AddTrashToInv(); 
                 energyManager.RemoveEnergyPoints(); 
 
-                trashManager.UpdateCollectText(); 
+
                 Debug.Log("Collect button clicked");
 
                 
@@ -54,31 +54,31 @@ public class Collect_Script : MonoBehaviour
                 //lägger till skräpet i rätt kategori
                 if (gameObject.CompareTag("Bottle_Red"))
                 {
-                    trashManager.redBottleCount++;
+                    inventoryManager.redBottleCount++;
                     //tar bort obj
                     gameObject.SetActive(false);
                 }
                 else if (gameObject.CompareTag("Bottle_Green"))
                 {
-                    trashManager.greenBottleCount++;
+                    inventoryManager.greenBottleCount++;
                     //tar bort obj
                     gameObject.SetActive(false);
                 }
                 else if (gameObject.CompareTag("Bottle_Blue"))
                 {
-                    trashManager.blueBottleCount++;
+                    inventoryManager.blueBottleCount++;
                     //tar bort obj
                     gameObject.SetActive(false);
                 }
                 else if (gameObject.CompareTag("Bottle_Orange"))
                 {
-                    trashManager.orangeBottleCount++;
+                    inventoryManager.orangeBottleCount++;
                     //tar bort obj
                     gameObject.SetActive(false);
                 }
                 else if (gameObject.CompareTag("Bottle_Yellow"))
                 {
-                    trashManager.yellowBottleCount++;
+                    inventoryManager.yellowBottleCount++;
                     //tar bort obj
                     gameObject.SetActive(false);
                 } 
@@ -114,23 +114,23 @@ public class Collect_Script : MonoBehaviour
         RandomBottle = Random.Range(1, 6);
         if (RandomBottle == 1)
         {
-            trashManager.redBottleCount++;
+            inventoryManager.redBottleCount++;
         }
         if (RandomBottle == 2)
         {
-            trashManager.greenBottleCount++;
+            inventoryManager.greenBottleCount++;
         }
         if (RandomBottle == 3)
         {
-            trashManager.blueBottleCount++;
+            inventoryManager.blueBottleCount++;
         }
         if (RandomBottle == 4)
         {
-            trashManager.orangeBottleCount++;
+            inventoryManager.orangeBottleCount++;
         }
         if (RandomBottle == 5)
         {
-            trashManager.yellowBottleCount++;
+            inventoryManager.yellowBottleCount++;
         }
     }
 

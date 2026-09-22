@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class DayManager_Script : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] EnergyManager_Script energyManagerScript;
+
+
+    
     void Start()
     {
         
@@ -13,4 +16,10 @@ public class DayManager_Script : MonoBehaviour
     {
         
     }
+
+    public void ResetDay()
+    {
+        Debug.Log("Reset day");
+    }
+
 }
