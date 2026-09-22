@@ -25,19 +25,22 @@ public class EnergyManager_Script : MonoBehaviour
 
     public void HandUpgrade1()
     {
+        //kollar om shop scripts hand upgrade 1 är true, om true så minskar den energikosnaden med 1. Man kan skapa en ny int med handUpgrade1energyCost och antingen tar bort eller sätter CollectCostTrash
         if (Shop_Script.handUpgrade1 == true)
         {
-            CollectCostTrash = 2;
+            CollectCostTrash = 2 ;
         }
     }
 
 
     public void AddFood()
     {
+        //kallas i Shop_Script
         foodAmount++;
     }
     public void EatFood()
     {
+        //kallas i EnergyButtonReciver_Script
         if (foodAmount <= 0 || EnergyPoints >= MaxEnergyPoints)
         {
             Debug.Log("You are either have no food or max energy");

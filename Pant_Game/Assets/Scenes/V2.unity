@@ -10410,9 +10410,11 @@ GameObject:
   - component: {fileID: 887811175}
   - component: {fileID: 887811177}
   - component: {fileID: 887811176}
+  - component: {fileID: 887811178}
+  - component: {fileID: 887811179}
   m_Layer: 5
   m_Name: TrashHeap
-  m_TagString: Untagged
+  m_TagString: TrashHeap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10480,7 +10482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 937422551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 887811178}
+        m_TargetAssemblyTypeName: Collect_Script, Assembly-CSharp
+        m_MethodName: OnMouseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &887811177
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10489,6 +10503,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887811174}
   m_CullTransparentMesh: 1
+--- !u!114 &887811178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887811174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52add566c81e1824bb3036c91cbe4ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collect_Script
+  trashManager: {fileID: 0}
+  energyManager: {fileID: 0}
+  inventoryManager: {fileID: 0}
+  trashHeapScript: {fileID: 0}
+  RandomBottle: 0
+--- !u!114 &887811179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887811174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4586462f82cd46542b14e4af6071a479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashHeap_Script
+  TrashInHeapCount: 0
 --- !u!1001 &887849536
 PrefabInstance:
   m_ObjectHideFlags: 0

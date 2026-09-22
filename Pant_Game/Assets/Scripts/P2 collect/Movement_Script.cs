@@ -28,6 +28,7 @@ public class Movement_Script : MonoBehaviour
         pRB = GetComponent<Rigidbody2D>();
         moveAction = InputSystem.actions.FindAction("Move");
 
+        //sätter alla bakgrunder och walls till false och aktiverar BG0 Walls0
         foreach (GameObject BG in BgList)
         {
             BG.SetActive(false);
@@ -77,6 +78,7 @@ public class Movement_Script : MonoBehaviour
 
 
 
+        //Main road
         if (collision.gameObject.CompareTag("BG0"))
         {
             Debug.Log("Going back to BG0");
@@ -118,6 +120,7 @@ public class Movement_Script : MonoBehaviour
 
 
         }
+
         if (collision.gameObject.CompareTag("BG2"))
         {
             Debug.Log("Go to BG2");
@@ -138,6 +141,7 @@ public class Movement_Script : MonoBehaviour
 
 
         }
+
         if (collision.gameObject.CompareTag("BG3"))
         {
             Debug.Log("Go to BG3");
@@ -158,6 +162,7 @@ public class Movement_Script : MonoBehaviour
 
 
         }
+
         if (collision.gameObject.CompareTag("BG4"))
         {
             Debug.Log("Go to BG4");
@@ -179,6 +184,7 @@ public class Movement_Script : MonoBehaviour
 
         }
 
+        //West road
         if (collision.gameObject.CompareTag("west road BG0"))
         {
             Debug.Log("Go to west road BG0");
@@ -242,7 +248,6 @@ public class Movement_Script : MonoBehaviour
 
         }
 
-
         if (collision.gameObject.CompareTag("west road BG3"))
         {
             Debug.Log("Go to west road BG3");
@@ -305,6 +310,8 @@ public class Movement_Script : MonoBehaviour
 
 
         }
+
+        //East road
 
         if (collision.gameObject.CompareTag("east road BG0"))
         {

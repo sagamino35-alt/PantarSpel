@@ -8,6 +8,7 @@ public class Collision_Script : MonoBehaviour
 
     Drag_Script dragScript;
     [SerializeField] Money_Script moneyScript;
+    [SerializeField] InventoryManager_Script inventoryManager; 
 
 
 
@@ -15,6 +16,7 @@ public class Collision_Script : MonoBehaviour
     {
         dragScript = GetComponent<Drag_Script>();
         moneyScript = FindAnyObjectByType<Money_Script>();
+        inventoryManager = FindAnyObjectByType<InventoryManager_Script>();
     }
 
 
@@ -56,6 +58,7 @@ public class Collision_Script : MonoBehaviour
             Destroy(transform.parent.gameObject);
             score_Script.SubScore();
             moneyScript.AddMoney();
+            inventoryManager.trashInInventory--;
 
         }
         else if (!collision.gameObject.CompareTag("Insert") || dragScript.moving)

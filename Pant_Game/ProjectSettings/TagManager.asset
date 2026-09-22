@@ -27,6 +27,7 @@ TagManager:
   - east road BG1
   - east road BG2
   - east road BG3
+  - TrashHeap
   layers:
   - Default
   - TransparentFX
