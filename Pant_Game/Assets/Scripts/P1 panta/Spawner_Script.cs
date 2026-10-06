@@ -15,11 +15,12 @@ public class Spawner_Script : MonoBehaviour
         
     }
 
-    private void Update()
+    
+
+    public void SetClickCount()
     {
         clickCount = inventoryManager.trashInInventory;
     }
-
     private void OnMouseDown()
     {
         clickCount--;
@@ -28,7 +29,7 @@ public class Spawner_Script : MonoBehaviour
             Debug.Log("Spawner clicked");
             Instantiate<GameObject>(BottlePrefab, spawnPoint.transform.position, Quaternion.identity);
 
-        }
+        } 
         
 
 

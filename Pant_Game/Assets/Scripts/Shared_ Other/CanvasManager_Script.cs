@@ -6,6 +6,7 @@ public class CanvasManager_Script : MonoBehaviour
     [SerializeField] GameObject gameP2Recycle;
     [SerializeField] GameObject gameP3Shop;
 
+    [SerializeField] Spawner_Script spawnerScript;
     [SerializeField] Score_Script scoreScript;
 
     private void Start()
@@ -34,6 +35,8 @@ public class CanvasManager_Script : MonoBehaviour
         gameP3Shop.SetActive(false);
 
         scoreScript.UpdateCount();
+        spawnerScript.SetClickCount();
+
 
         HideCursor();
     }

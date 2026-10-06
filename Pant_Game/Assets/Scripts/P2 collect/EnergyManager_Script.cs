@@ -9,7 +9,7 @@ public class EnergyManager_Script : MonoBehaviour
 
     [SerializeField] Shop_Script Shop_Script;
 
-    [SerializeField] int foodAmount;
+    public int foodAmount;
     [SerializeField] int foodEnergy = 5;
     
 
@@ -23,6 +23,11 @@ public class EnergyManager_Script : MonoBehaviour
         EnergyPoints -= CollectCostTrash;
     }
 
+    public void ResetEnergy()
+    {
+        //says to reset day to DayManager
+        EnergyPoints = MaxEnergyPoints;
+    }
     public void HandUpgrade1()
     {
         //kollar om shop scripts hand upgrade 1 är true, om true så minskar den energikosnaden med 1. Man kan skapa en ny int med handUpgrade1energyCost och antingen tar bort eller sätter CollectCostTrash
