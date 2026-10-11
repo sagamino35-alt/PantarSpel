@@ -28,11 +28,18 @@ TagManager:
   - east road BG2
   - east road BG3
   - TrashHeap
+  - UTest
+  - LTest
+  - RTest
+  - DTest
+  - CTest
+  - OTest
+  - WallDelete
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TrashHolding
   - Water
   - UI
   - 
