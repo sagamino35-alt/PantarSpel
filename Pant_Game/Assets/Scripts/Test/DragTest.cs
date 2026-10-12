@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class DragTest : MonoBehaviour
 {
-  public  GameObject HingePoint;
-  public  HingeJoint2D hinge;
-    public Rigidbody2D rb;
+    [SerializeField] private GameObject HingePoint;
+    [SerializeField] private HingeJoint2D hinge;
+    [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] public GameObject   Origin;
+    [SerializeField] private GameObject Origin;
 
     Vector2 vel;
     Vector2 lastPos;
     Vector2 objPos;
 
-    static float t = 0.0f;
+    [SerializeField] private float waitTime;
 
-    public bool moving = false;
 
-    bool isReturning;
+    [SerializeField] private bool moving = false;
+    [SerializeField] private bool isReturning;
+
     Vector2 offset;
     void Start()
     {
 
-        Cursor.visible = true;
+
         rb = GetComponent<Rigidbody2D>();
         HingePoint = gameObject;
         hinge = HingePoint.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
@@ -40,7 +41,8 @@ public class DragTest : MonoBehaviour
 
          offset = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
 
-        HingePoint.transform.position = new Vector2(Camera.main.ScreenToWorldPoint(mousePos).x, Camera.main.ScreenToWorldPoint(mousePos).y);
+        HingePoint.transform.position = new Vector2(Camera.main.ScreenToWorldPoint(mousePos).x, 
+            Camera.main.ScreenToWorldPoint(mousePos).y) - offset;
 
         hinge = HingePoint.GetComponent(typeof(HingeJoint2D)) as HingeJoint2D;
 
@@ -71,8 +73,11 @@ public class DragTest : MonoBehaviour
     {
         if (moving == true)
         {
+            isReturning = false;
+
             Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            HingePoint.transform.position = new Vector2(Camera.main.ScreenToWorldPoint(mousePos).x, Camera.main.ScreenToWorldPoint(mousePos).y) - offset;
+            HingePoint.transform.position = new Vector2(Camera.main.ScreenToWorldPoint(mousePos).x, 
+                Camera.main.ScreenToWorldPoint(mousePos).y) - offset;
 
 
 
@@ -124,12 +129,11 @@ public class DragTest : MonoBehaviour
     IEnumerator TimeToReturn()
     {
 
-
         
 
-        yield return new WaitForSeconds(1f);
-
-        
+        yield return new WaitForSeconds(waitTime);
+        rb.gravityScale = 0;
+        rb.linearVelocity = Vector2.zero;
 
         isReturning = true;
     }
