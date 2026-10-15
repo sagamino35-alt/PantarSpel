@@ -111,9 +111,11 @@ public class MovementTest : MonoBehaviour
             this.gameObject.transform.position = reset;
         }
 
+        
+
         if (collision.gameObject.CompareTag("LTest"))
         {
-            Debug.Log("Left");
+           
 
             foreach (GameObject Walls in WallsList)
             {

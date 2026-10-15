@@ -22,6 +22,9 @@ public class DragTest4 : MonoBehaviour
     [SerializeField] private float waitTime;
 
     private bool isReturning = false;
+    private bool untouched = true;
+
+    //[SerializeField] private Quaternion currentRotation;
 
     void Start()
     {
@@ -29,9 +32,12 @@ public class DragTest4 : MonoBehaviour
 
         //Finds a GameObject with the name "HingePoint"
         HingePoint = GameObject.Find("HingePoint");
+        Origin = GameObject.Find("OriginTransform");
 
         transform.position = Origin.transform.position;
         rb.gravityScale = 0;
+
+        untouched = true;
     }
 
     private void OnMouseDown()
@@ -52,6 +58,8 @@ public class DragTest4 : MonoBehaviour
         hinge.autoConfigureConnectedAnchor = false;
 
         rb.gravityScale = 1;
+
+        untouched = false;
 
 
     }
@@ -76,7 +84,23 @@ public class DragTest4 : MonoBehaviour
         {
 
             transform.position = Vector3.Lerp(transform.position, Origin.transform.position, Time.deltaTime * 20);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, 0, Time.deltaTime * 20);
+            //float angle = Mathf.LerpAngle(transform.rotation, 0, Time.deltaTime * 20);
 
+            //transform.eulerAngles = new Vector3(angle, 0, 0);
+        }
+
+        if (untouched == true)
+        {
+            
+
+            move = false;
+            
+
+            rb.gravityScale = 0;
+            rb.linearVelocity = Vector2.zero;
+
+            transform.position = Origin.transform.position;
         }
 
     }
@@ -110,6 +134,8 @@ public class DragTest4 : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         isReturning = true;
+
+        //currentRotation = Quaternion.EulerRotation;
     }
 
 
