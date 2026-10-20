@@ -17,7 +17,7 @@ public class DragTest4 : MonoBehaviour
     Vector2 lastPosition;
     Vector2 objPosition;
 
-    bool move = false;
+    public bool move = false;
 
     [SerializeField] private float waitTime;
 
@@ -39,7 +39,11 @@ public class DragTest4 : MonoBehaviour
 
         untouched = true;
     }
-
+    public void InsertedBottle()
+    {
+        rb.gravityScale = 0;
+        rb.linearVelocity = Vector2.zero;
+    }
     private void OnMouseDown()
     {
         

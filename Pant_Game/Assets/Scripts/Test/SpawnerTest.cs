@@ -6,7 +6,7 @@ public class SpawnerTest : MonoBehaviour
 
     [SerializeField] GameObject BottlePrefab;
     [SerializeField] private GameObject spawnPoint;
-    [SerializeField] private int trashAmountOS = 0;
+    public int trashAmountOS = 0;
 
     
     private void OnMouseDown()
