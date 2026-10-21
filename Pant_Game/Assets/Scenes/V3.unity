@@ -19392,8 +19392,8 @@ Canvas:
   m_GameObject: {fileID: 1380951708}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2001868754}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -28832,7 +28832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2123301897
 Transform:
   m_ObjectHideFlags: 0
@@ -29267,7 +29267,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2001868755}
-  - {fileID: 1863645829}
   - {fileID: 1086381892}
   - {fileID: 1294646929}
   - {fileID: 2128949191}
@@ -29278,3 +29277,4 @@ SceneRoots:
   - {fileID: 1642674904}
   - {fileID: 748913647}
   - {fileID: 915106390}
+  - {fileID: 1863645829}
