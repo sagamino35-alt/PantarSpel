@@ -23,14 +23,14 @@ public class InsertTest : MonoBehaviour
 
     IEnumerator WaitDetection(Collider2D collision)
     {
-        yield return new WaitForSeconds (1f);
+        yield return new WaitForSeconds (0.3f);
         if (dragTest.move == true)
         {
             if (collision.CompareTag("Bottle_Red"))
             {
 
                 Debug.Log("Red bottle detected");
-                spawnerTest.trashAmountOS = 0;
+                
                 StartCoroutine(WaitForDestroy(collision));
 
             }
@@ -44,6 +44,7 @@ public class InsertTest : MonoBehaviour
     {
         dragTest.InsertedBottle();
         yield return new WaitForSeconds(1f);
+        spawnerTest.trashAmountOS = 0;
         Destroy(collision.gameObject);
     }
 }
