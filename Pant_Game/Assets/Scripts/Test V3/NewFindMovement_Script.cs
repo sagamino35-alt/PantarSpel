@@ -20,7 +20,10 @@ public class NewFindMovement_Script : MonoBehaviour
     {
         cVector = arrowMovement.action.ReadValue<Vector2>();
         imageRb.linearVelocity = cVector * canvasSpeed;
-        imageRb.position = new Vector2(Mathf.Clamp(imageRb.position.x, -230, 230), Mathf.Clamp(imageRb.position.y, -1500, 1500));
+        imageRb.position = new Vector2(Mathf.Clamp(imageRb.position.x, -0.6f, 0.6f), Mathf.Clamp(imageRb.position.y, -6.4f, 6.4f));
 
+        Debug.Log("RB pos: " + imageRb.position);
+        Debug.Log("Transform.position: " + imageRb.transform.position);
+        Debug.Log("Transform.localPosition: " + imageRb.transform.localPosition);
     }
 }
